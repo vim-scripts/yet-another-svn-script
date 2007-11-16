@@ -1,0 +1,44 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2071
+
+Probably you want to try http://www.vim.org/scripts/script.php?script_id=90 instead. It's much more powerful
+
+Default mapping are provided by
+
+vl#dev#versioncontrolsystem#manager#VCSUI()
+(and see the tagging UI function below)
+
+Eg when committing you'll get a new window like this:
+=============  =======================================================
+
+VCCommit
+
+  press <m-h> for a short help, <m-f> when you have finished
+
+@#@ /pr/svnnix/trace/nixpkgs/trunk/ :
+@#@ /pr/svnnix/trace/nixpkgs/trunk/pkgs/top-level/all-packages.nix :
+@#@ comment for all (additional comments will be added below this) :
+=============  =======================================================
+
+Either place you comment below the last line (comment for all)
+Or add individual comments for each file (a svn commit will then be executed for each of them)
+The comment for all will be added as well in this case
+
+If a file hasn't been added it will be added automatically.
+
+See the **tagging.vim file (defining b:tagged) which tells the script which
+files to add / commit
+
+It does also define the command UntagAll
+
+You want to call vl#lib#ui#tagging#TaggingUI() to add the <m-t><m-g> mapping
+toggling the tagged status.
+
+I've been using this script for quite while now.
+It's not finished but it does all I need most of the time.
+
+If you have trouble (errors) then try
+:echo g:systemResult
+which shows the last command output much nicer then the exception
+
+Feel free to sent me a mail with any questions/ enhancements etc.
+
